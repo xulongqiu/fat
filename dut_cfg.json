@@ -1,0 +1,147 @@
+{
+	"description":"egg2,es1,tx-loop,201712251534",
+    "line_in": {
+        "iPlaybackVolume": 5
+    },
+    "signal_generator": { 
+		"sweep_signal": {
+			"sOutFile": "./data/test_signal_fr.wav",
+			"iSampleRate": 16000,
+			"iChannels": 1,
+			"fSegmentSecs": 2.0,
+			"iStartFreq": 20,
+			"iEndFreq": 8000,
+			"fStartSilenceSecs": 0.5,
+			"fEndSilenceSecs": 0.5,
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"fIntervalSecs": 0.5,
+			"iSegmentNum": 5
+		},
+		"multitone_signal": {
+			"sOutFile": "./data/test_signal_ncd.wav",
+			"iSampleRate": 16000,
+			"iChannels": 1,
+			"fSegmentSecs": 2.0,
+			"iStartFreq": 20,
+			"iEndFreq": 8000,
+			"fStartSilenceSecsSecs": 0.5,
+			"fEndSilenceSecsSecs": 0.5,
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"fIntervalSecs": 0.5,
+			"iSegmentNum": 5
+		}
+    },
+	"tx_test": {
+		"tx_record": {
+			"sOutFile": "./data/tx_record.wav",
+			"fDuration": 19.5,
+			"iVolume": 5,
+			"iChannels": 6,
+			"iSampeRate": 16000
+		},
+		"tx_analyzer": {
+			"sInFile": "./data/tx_record.wav",
+			"sRetFile": "./data/tx_analyzer_ret.txt",
+			"iSampleRate": 16000,
+			"fSegmentSecs": 2.0,
+			"iStartFreq": 20,
+			"iEndFreq": 8000,
+			"fStartSilenceSecs": 0.5,
+			"fEndSilenceSecs": 0.5,
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"fIntervalTime": 0.5,
+			"iSegmentNum": 5,
+			"iFindIr": 0,
+			"fIrLeftSecs": 0.05,
+			"fIrRightSecs": 0.05,
+			"iWindow": 0,
+			"iNfft": 0,
+			"iSmooth": 0
+		}
+	},
+	"closed_loop": {
+		"fr_record": {
+			"sOutFile": "./data/fr_record.wav",
+			"fDuration": 17.5,
+			"iVolume": 5,
+			"iChannels": 6,
+			"iSampeRate": 16000
+		},
+		"fr_play": {
+			"sInFile": "./data/test_signal_fr.wav",
+			"fWaitSecs": 2,
+			"fPlaySecs": 19.5,
+			"iVolume": 6,
+			"iSampeRate": 16000,
+			"iChannels": 1
+		},
+		"ncd_record": {
+			"sOutFile": "./data/ncd_record.wav",
+			"fDuration": 17.5,
+			"iVolume": 5,
+			"iChannels": 6,
+			"iSampeRate": 16000
+		},
+		"ncd_play": {
+			"sInFile": "./data/test_signal_ncd.wav",
+			"fWaitSecs": 2,
+			"fPlaySecs": 19.5,
+			"iVolume": 6,
+			"iSampeRate": 16000,
+			"iChannels": 1
+		},
+		"fr_analyzer" : {
+			"sInFile": "./data/fr_record.wav",
+			"sRetFile": "./data/fr_analyzer_ret.txt",
+			"iSampleRate": 16000,
+			"fSegmentSecs": 2.0,
+			"iStartFreq": 20,
+			"iEndFreq": 8000,
+			"fStartSilenceSecs": 0.5,
+			"fEndSilenceSecs": 0.5,
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"fIntervalTime": 0.5,
+			"iSegmentNum": 5,
+			"iFindIr": 0,
+			"fIrLeftSecs": 0.05,
+			"fIrRightSecs": 0.05,
+			"iFrWindow": 0,
+			"iFindHd": 0,
+			"iHdTaps": 0,
+			"fHdLeftSecs": 0.05,
+			"fHdRightSecs": 0.05,
+			"iHdWindow": 0,
+			"iNfft": 0,
+			"iSmooth": 0
+		},
+		"ncd_analyzer": {
+			"sInFile": "./data/ncd_record.wav",
+			"sRetFile": "./data/ncd_analyzer_ret.txt",
+			"iSampleRate": 16000,
+			"fSegmentSecs": 2.0,
+			"iStartFreq": 20,
+			"iEndFreq": 8000,
+			"fStartSilenceSecs": 0.5,
+			"fEndSilenceSecs": 0.5,
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"fIntervalTime": 0.5,
+			"iSegmentNum": 5,
+			"iFindIr": 0,
+			"fIrLeftSecs": 0.05,
+			"fIrRightSecs": 0.05,
+			"iFrWindow": 0,
+			"iFindHd": 0,
+			"iHdTaps": 0,
+			"fHdLeftSecs": 0.05,
+			"fHdRightSecs": 0.05,
+			"iHdWindow": 0,
+			"iNfft": 0,
+			"iSmooth": 0
+		}
+    }
+}    

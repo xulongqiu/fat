@@ -1,0 +1,95 @@
+{
+	"description":"egg2,es1,tx-loop,201712251534",
+    "line_in": {
+        "iVolume": 60
+    },
+    "signal_generator": { 
+		"sweep_signal": {
+			"sOutFile": "/data/test_signal_fr.wav",
+			"sFilterSignal": "/data/signal_measurement.wav",
+			"iSampleRate": 16000,
+			"iChannels": 2,
+			"fSegmentSecs": 1.0,
+			"iStartFreq": 80,
+			"iEndFreq": 8000,
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"iSegmentNum": 1
+		},
+		"multitone_signal": {
+			"sOutFile": "/data/test_signal_ncd.wav",
+			"iSampleRate": 16000,
+			"iChannels": 2,
+			"fSegmentSecs": 1.0,
+			"iVecFreq": [535, 550, 570, 580, 600, 735, 750, 780, 800, 1150, 1160, 1180, 1200],
+			"fVecAmplitude": [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15],
+			"fFadeInSecs": 0.05,
+			"fFadeOutSecs": 0.05,
+			"iSegmentNum": 1
+		}
+    },
+	"tx_test": {
+		"tx_record": {
+			"sOutFile": "/data/tx_record.wav",
+			"iVolume": 6
+		},
+		"tx_analyzer": {
+			"sInFile": "/data/tx_record.wav",
+			"sFilterSignal": "/data/signal_measurement.wav",
+			"sRetTxFile": "/data/tx_analyzer_ret.txt",
+			"fSegmentSecs": 1.0,
+			"iStartFreq": 80,
+			"iEndFreq": 8000,
+			"iSegmentNum": 1,
+			"fIrDuration":  0.032,
+			"fIrRollPortion": 0.05,
+			"iOctOrder": 12
+		}
+	},
+	"global_paras": {
+		"fLagSecs": 0.5,
+		"fStartSilenceSecs": 0.1,
+		"fEndSilenceSecs": 0.2,
+		"fIntervalSecs": 0
+	},
+	"closed_loop": {
+		"fr_record": {
+			"sOutFile": "/data/fr_record.wav",
+			"iVolume": 6
+		},
+		"fr_play": {
+			"sInFile": "/data/test_signal_fr.wav",
+			"iVolume": 60
+		},
+		"ncd_record": {
+			"sOutFile": "/data/ncd_record.wav",
+			"iVolume": 6
+		},
+		"ncd_play": {
+			"sInFile": "/data/test_signal_ncd.wav",
+			"iVolume": 60
+		},
+		"fr_analyzer" : {
+			"sInFile": "/data/fr_record.wav",
+			"sFilterSignal": "/data/signal_measurement.wav",
+			"sRetFrFile": "/data/fr_analyzer_ret_fr.txt",
+			"sRetThdFile": "/data/fr_analyzer_ret_thd.txt",
+			"fSegmentSecs": 1.0,
+			"iStartFreq": 80,
+			"iEndFreq": 8000,
+			"iSegmentNum": 1,
+			"fIrDuration":  0.032,
+			"fIrRollPortion": 0.05,
+			"iOrder": 5,
+			"iOctOrder": 12
+		},
+		"ncd_analyzer": {
+			"sInFile": "/data/ncd_record.wav",
+			"sRetNcdFile": "/data/ncd_analyzer_ret.txt",
+			"fSegmentSecs": 1.0,
+			"iStartFreq": 100,
+			"iEndFreq": 7000,
+			"iSegmentNum": 1
+		}
+    }
+}    
